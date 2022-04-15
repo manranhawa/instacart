@@ -24,14 +24,14 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pageObjects.AccountRegistrationPage;
+import pageObjects.Homepage;
 
 
-public class steps {
+public class Steps {
 
     WebDriver driver;
    
-    AccountRegistrationPage ar;
+    Homepage ar;
     
     ResourceBundle rb; // for reading properties file
     String br;
@@ -72,13 +72,13 @@ public class steps {
 
    @When("User see the alert, clicks on the cross icon")
     public void user_navigate_to_my_account() throws InterruptedException {
-        ar=new AccountRegistrationPage(driver);
+        ar=new Homepage(driver);
         ar.checkifalertpresent();
        
     }
     @When("user is on homepage")
     public void Getallstorenames() throws InterruptedException {
-    	ar=new AccountRegistrationPage(driver);
+    	ar=new Homepage(driver);
         ar.storenames();
         
     }
